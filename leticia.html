@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Perdoa, Meu Amor 💖🥺</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+            animation: backgroundPulse 3s infinite alternate;
+        }
+        @keyframes backgroundPulse {
+            0% { background-color: #fff0f5; }
+            100% { background-color: #ffccff; }
+        }
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background: #ffe6f2;
+            border-radius: 20px;
+            box-shadow: 0 0 30px pink;
+            display: inline-block;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        h1 {
+            color: #ff1493;
+            font-size: 36px;
+            text-shadow: 2px 2px 5px #ff66b2;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 2px 2px 5px #ff66b2; }
+            100% { text-shadow: 4px 4px 10px #ff1493; }
+        }
+        p {
+            font-size: 22px;
+            color: #cc0066;
+            animation: fadeIn 3s infinite alternate;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .gif-container img {
+            width: 250px;
+            animation: float 3s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: #ff69b4;
+            animation: fall 5s infinite linear;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .flowers {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://i.pinimg.com/originals/38/3d/5e/383d5ec44560fbd473dbef5a92c0e226.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            animation: wave 5s infinite alternate;
+        }
+        @keyframes wave {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+        .photo-container {
+            margin-top: 20px;
+        }
+        .photo-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px pink;
+            animation: pulse 2s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">❤️💕💖💗💓💞💘💝</div>
+    <div class="container">
+        <h1>Me desculpa, amorzinho? 🥺💞</h1>
+        <p>Eu sei que você está brava, mas eu odeio te ver assim... 😭</p>
+        <p>Você é minha pessoa favorita no mundo, e eu só quero te fazer feliz! 💕</p>
+        <p>Me perdoa por qualquer coisa? Eu te amo muito! 💖</p>
+        <div class="gif-container">
+            <img src="https://media.tenor.com/bFopYRh0uXgAAAAi/cute-bear.gif" alt="Ursinho pedindo desculpas">
+        </div>
+        <p><b>Você é tudo para mim! 💕💖</b></p>
+        
+        <div class="photo-container">
+            <p><b>Minha princesa linda! 💖</b></p>
+            <img src="sua_foto_aqui.jpg" alt="Foto da minha namorada">
+        </div>
+    </div>
+    <div class="flowers"></div>
+
+    <!-- Áudio escondido tocando automaticamente -->
+    <audio id="musica" autoplay loop>
+        <source src="sua_musica_aqui.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("musica");
+
+            // Tenta tocar automaticamente
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Caso o navegador bloqueie, toca ao primeiro clique na página
+                    document.body.addEventListener("click", () => audio.play(), { once: true });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
